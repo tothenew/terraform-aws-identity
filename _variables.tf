@@ -75,6 +75,21 @@ variable "common_tags" {
   }
 }
 
+variable "extra_roles" {
+  default     = []
+  description = "A list of extra roles to create in this account"
+}
+
+variable "extra_roles_policy_arn" {
+  default     = {}
+  description = "A map of { <role_name> = <policy arn> } to attach policies to extra roles in this account (role must be declared at extra_roles first)"
+}
+
+variable "extra_roles_policy" {
+  default     = {}
+  description = "A map of { <role_name> = <json policy> } to create policies to extra roles in this account (role must be declared at extra_roles first)"
+}
+
 variable "saml_provider_name" {
   description = "SAML Provider name to trust the roles created (pass either name or ARN)"
   default     = ""

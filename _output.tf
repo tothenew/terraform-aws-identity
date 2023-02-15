@@ -47,3 +47,8 @@ output "iam_role_view_only_arn" {
   value       = aws_iam_role.view_only[0].arn
   description = "ViewOnlyAccess IAM role ARN"
 }
+
+
+output "iam_role_extra_arns" {
+  value = aws_iam_role.extra.*.arn
+}
