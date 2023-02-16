@@ -98,6 +98,7 @@ No outputs.
 | iam\_role\_system\_admin\_arn | SystemAdministrator IAM role ARN |
 | iam\_role\_view\_only\_arn | ViewOnlyAccess IAM role ARN |
 
+<!-- END_TF_DOCS --> 
 ## Authors
 
 Module managed by [TO THE NEW Pvt. Ltd.](https://github.com/tothenew)
