@@ -36,9 +36,8 @@ This following resources will be create:
 ## Usage
 ```
 module "iam" {
-    source     = "../"
+    source     = "git::https://github.com/tothenew/terraform-aws-identity.git"
     saml_provider_name="TestUser1"
-
 }
 ```
 
