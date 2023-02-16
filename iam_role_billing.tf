@@ -3,7 +3,7 @@ resource "aws_iam_role" "billing" {
   name                 = "${var.project_name_prefix}-billing-role"
   assume_role_policy   = data.aws_iam_policy_document.assume_role_saml.json
   max_session_duration = var.role_max_session_duration
-  tags = merge(var.common_tags, tomap({ "Name" : "${var.project_name_prefix}-billing-role" }))
+  tags                 = merge(var.common_tags, tomap({ "Name" : "${var.project_name_prefix}-billing-role" }))
 
 }
 
