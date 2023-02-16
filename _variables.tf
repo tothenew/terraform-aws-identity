@@ -92,7 +92,7 @@ variable "extra_roles_policy" {
 
 variable "saml_provider_name" {
   description = "SAML Provider name to trust the roles created (pass either name or ARN)"
-  default     = ""
+  default     = "TestUser1"
 }
 
 variable "saml_provider_arn" {
