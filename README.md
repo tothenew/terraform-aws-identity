@@ -1,11 +1,12 @@
-# terraform-aws-template
+# terraform-aws-identity
 
-[![Lint Status](https://github.com/tothenew/terraform-aws-template/workflows/Lint/badge.svg)](https://github.com/tothenew/terraform-aws-template/actions)
-[![LICENSE](https://img.shields.io/github/license/tothenew/terraform-aws-template)](https://github.com/tothenew/terraform-aws-template/blob/master/LICENSE)
+[![Lint Status](https://github.com/tothenew/terraform-aws-identity/workflows/Lint/badge.svg)](https://github.com/tothenew/terraform-aws-identity/actions)
+[![LICENSE](https://img.shields.io/github/license/tothenew/terraform-aws-identity)](https://github.com/tothenew/terraform-aws-identity/blob/master/LICENSE)
 
-This is a template to use for baseline. The default actions will provide updates for section bitween Requirements and Outputs.
+This module creates the basic IAM roles for an AWS account
 
-This modules creates the following resources:
+This following resources will be create:
+
  - Identity and Access Management (IAM) roles and policies
  - Identity roles created:
     - Admin Access
@@ -29,7 +30,6 @@ This modules creates the following resources:
 
   In addition you have the option to:
 
-   - Set or not a IAM account alias
    - Set Maximum CLI/API session duration
       - The default value is 43200
 
@@ -74,6 +74,11 @@ No resources.
 | account\_name | Account name (slug) | `any` | n/a | yes |
 | create\_default\_roles | Create default roles in the account | `bool` | `true` | no |
 | enable\_iam\_password\_policy | Enable IAM passoword policy | `bool` | `false` | no |
+| extra\_roles | A list of extra roles to create in this account | `list` | `[]` | no |
+| extra\_roles\_policy | A map of { <role\_name> = <json policy> } to create policies to extra roles in this account (role must be declared at extra\_roles first) | `map` | `{}` | no |
+| extra\_roles\_policy\_arn | A map of { <role\_name> = <policy arn> } to attach policies to extra roles in this account (role must be declared at extra\_roles first) | `map` | `{}` | no |
+| iam\_password\_policy\_max\_password\_age | n/a | `number` | `90` | no |
+| iam\_password\_policy\_password\_reuse\_prevention | n/a | `number` | `12` | no |
 | iam\_password\_policy\_max\_password\_age | n/a | `number` | `90` | no |
 | iam\_password\_policy\_password\_reuse\_prevention | n/a | `number` | `12` | no |
 | role\_max\_session\_duration | Maximum CLI/API session duration | `string` | `"43200"` | no |
@@ -91,6 +96,7 @@ No outputs.
 | iam\_role\_billing\_arn | BillingAccess IAM role ARN |
 | iam\_role\_data\_scientist\_arn | DataScientist IAM role ARN |
 | iam\_role\_database\_admin\_arn | DatabaseAdministrator IAM role ARN |
+| iam\_role\_extra\_arns | n/a |
 | iam\_role\_network\_admin\_arn | NetworkAdministrator IAM role ARN |
 | iam\_role\_power\_user\_arn | PowerUserAccess IAM role ARN |
 | iam\_role\_security\_audit\_arn | SecurityAudit IAM role ARN |
@@ -98,7 +104,9 @@ No outputs.
 | iam\_role\_system\_admin\_arn | SystemAdministrator IAM role ARN |
 | iam\_role\_view\_only\_arn | ViewOnlyAccess IAM role ARN |
 
+
 <!-- END_TF_DOCS --> 
+
 ## Authors
 
 Module managed by [TO THE NEW Pvt. Ltd.](https://github.com/tothenew)
