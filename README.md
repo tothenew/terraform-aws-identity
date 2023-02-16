@@ -1,9 +1,9 @@
-# terraform-aws-template
+# terraform-aws-identity
 
-[![Lint Status](https://github.com/tothenew/terraform-aws-template/workflows/Lint/badge.svg)](https://github.com/tothenew/terraform-aws-template/actions)
-[![LICENSE](https://img.shields.io/github/license/tothenew/terraform-aws-template)](https://github.com/tothenew/terraform-aws-template/blob/master/LICENSE)
+[![Lint Status](https://github.com/tothenew/terraform-aws-identity/workflows/Lint/badge.svg)](https://github.com/tothenew/terraform-aws-identity/actions)
+[![LICENSE](https://img.shields.io/github/license/tothenew/terraform-aws-identity)](https://github.com/tothenew/terraform-aws-identity/blob/master/LICENSE)
 
-This module creates the default IAM roles
+This module creates the basic IAM roles for an AWS account
 
 This following resources will be create:
 
