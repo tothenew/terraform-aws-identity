@@ -12,3 +12,10 @@ resource "aws_iam_role_policy_attachment" "security_audit" {
   role       = aws_iam_role.security_audit[0].name
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
 }
+
+resource "aws_iam_instance_profile" "security_audit" {
+  count                = var.create_iam_security_audit_role ? 1 : 0
+  name                 = "${var.project_name_prefix}-security-audit-role"
+  role       = aws_iam_role.security_audit[0].name
+  tags                 = merge(var.common_tags, tomap({ "Name" : "${var.project_name_prefix}-security-audit-role" }))
+}
