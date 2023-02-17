@@ -87,8 +87,6 @@ No resources.
 
 ## Outputs
 
-No outputs.
-
 | Name | Description |
 |------|-------------|
 | iam\_role\_admin\_arn | AdministratorAccess IAM role ARN |
@@ -102,7 +100,6 @@ No outputs.
 | iam\_role\_support\_user\_arn | SupportUser IAM role ARN |
 | iam\_role\_system\_admin\_arn | SystemAdministrator IAM role ARN |
 | iam\_role\_view\_only\_arn | ViewOnlyAccess IAM role ARN |
-
 | iam\_instance_profile\_admin\_arn | AdministratorAccess IAM instance_profile ARN |
 | iam\_instance_profile\_billing\_arn | BillingAccess IAM instance_profile ARN |
 | iam\_instance_profile\_data\_scientist\_arn | DataScientist IAM instance_profile ARN |
