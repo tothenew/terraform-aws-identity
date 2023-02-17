@@ -103,6 +103,18 @@ No outputs.
 | iam\_role\_system\_admin\_arn | SystemAdministrator IAM role ARN |
 | iam\_role\_view\_only\_arn | ViewOnlyAccess IAM role ARN |
 
+| iam\_instance_profile\_admin\_arn | AdministratorAccess IAM instance_profile ARN |
+| iam\_instance_profile\_billing\_arn | BillingAccess IAM instance_profile ARN |
+| iam\_instance_profile\_data\_scientist\_arn | DataScientist IAM instance_profile ARN |
+| iam\_instance_profile\_database\_admin\_arn | DatabaseAdministrator IAM instance_profile ARN |
+| iam\_instance_profile\_extra\_arns | n/a |
+| iam\_instance_profile\_network\_admin\_arn | NetworkAdministrator IAM instance_profile ARN |
+| iam\_instance_profile\_power\_user\_arn | PowerUserAccess IAM instance_profile ARN |
+| iam\_instance_profile\_security\_audit\_arn | SecurityAudit IAM instance_profile ARN |
+| iam\_instance_profile\_support\_user\_arn | SupportUser IAM instance_profile ARN |
+| iam\_instance_profile\_system\_admin\_arn | SystemAdministrator IAM instance_profile ARN |
+| iam\_instance_profile\_view\_only\_arn | ViewOnlyAccess IAM instance_profile ARN |
+
 
 <!-- END_TF_DOCS --> 
 
