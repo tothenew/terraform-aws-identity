@@ -60,18 +60,31 @@ module "iam" {
 
 ## Modules
 
-No modules.
+| <a name="iam"></a> [ec2\_iam](#module\_ec2\_iam) | ./modules/_iam | n/a |
+
 
 ## Resources
 
-No resources.
-
+| Name | Type |
+|------|------|
+| [aws_iam_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [iam_role_policy_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [iam_instance_profile](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| account\_name | Account name (slug) | `any` | n/a | yes |
-| create\_default\_roles | Create default roles in the account | `bool` | `true` | no |
+| common_tags | A mapping of tags to assign to the resource | `map(string)` | n/a |no 
+| create\_iam_admin\_role | Create default role in the account | `bool` | `true` | no |
+| create\_iam_billing\_role | Create default role in the account | `bool` | `true` | no |
+| create\_iam_data_scientist\_role | Create default role in the account | `bool` | `true` | no |
+| create\_iam_database_admin\_role | Create default role in the account | `bool` | `true` | no |
+| create\_iam_network_admin\_role | Create default role in the account | `bool` | `true` | no |
+| create\_iam_power_user\_role | Create default role in the account | `bool` | `true` | no |
+| create\_iam_security_audit\_role | Create default role in the account | `bool` | `true` | no |
+| create\_iam_support_user\_role | Create default role in the account | `bool` | `true` | no |
+| create\_iam_system_admin\_role | Create default role in the account | `bool` | `true` | no |
+| create\_iam_view_only\_role | Create default role in the account | `bool` | `true` | no |
 | enable\_iam\_password\_policy | Enable IAM passoword policy | `bool` | `false` | no |
 | extra\_roles | A list of extra roles to create in this account | `list` | `[]` | no |
 | extra\_roles\_policy | A map of { <role\_name> = <json policy> } to create policies to extra roles in this account (role must be declared at extra\_roles first) | `map` | `{}` | no |
@@ -87,8 +100,6 @@ No resources.
 
 ## Outputs
 
-No outputs.
-
 | Name | Description |
 |------|-------------|
 | iam\_role\_admin\_arn | AdministratorAccess IAM role ARN |
@@ -102,6 +113,17 @@ No outputs.
 | iam\_role\_support\_user\_arn | SupportUser IAM role ARN |
 | iam\_role\_system\_admin\_arn | SystemAdministrator IAM role ARN |
 | iam\_role\_view\_only\_arn | ViewOnlyAccess IAM role ARN |
+| iam\_instance_profile\_admin\_arn | AdministratorAccess IAM instance_profile ARN |
+| iam\_instance_profile\_billing\_arn | BillingAccess IAM instance_profile ARN |
+| iam\_instance_profile\_data\_scientist\_arn | DataScientist IAM instance_profile ARN |
+| iam\_instance_profile\_database\_admin\_arn | DatabaseAdministrator IAM instance_profile ARN |
+| iam\_instance_profile\_extra\_arns | n/a |
+| iam\_instance_profile\_network\_admin\_arn | NetworkAdministrator IAM instance_profile ARN |
+| iam\_instance_profile\_power\_user\_arn | PowerUserAccess IAM instance_profile ARN |
+| iam\_instance_profile\_security\_audit\_arn | SecurityAudit IAM instance_profile ARN |
+| iam\_instance_profile\_support\_user\_arn | SupportUser IAM instance_profile ARN |
+| iam\_instance_profile\_system\_admin\_arn | SystemAdministrator IAM instance_profile ARN |
+| iam\_instance_profile\_view\_only\_arn | ViewOnlyAccess IAM instance_profile ARN |
 
 
 <!-- END_TF_DOCS --> 
