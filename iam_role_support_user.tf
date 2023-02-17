@@ -14,8 +14,8 @@ resource "aws_iam_role_policy_attachment" "support_user" {
 }
 
 resource "aws_iam_instance_profile" "support_user" {
-  count                = var.create_iam_support_user_role ? 1 : 0
-  name                 = "${var.project_name_prefix}-support-user-role"
-  role       = aws_iam_role.support_user[0].name
-  tags                 = merge(var.common_tags, tomap({ "Name" : "${var.project_name_prefix}-support-user-role" }))
+  count = var.create_iam_support_user_role ? 1 : 0
+  name  = "${var.project_name_prefix}-support-user-role"
+  role  = aws_iam_role.support_user[0].name
+  tags  = merge(var.common_tags, tomap({ "Name" : "${var.project_name_prefix}-support-user-role" }))
 }

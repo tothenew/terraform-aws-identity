@@ -106,5 +106,5 @@ output "iam_role_extra_arns" {
 }
 
 output "iam_instance_profile_extra_arns" {
-  value       = aws_iam_instance_profile.extra.*.arn
+  value = aws_iam_instance_profile.extra.*.arn
 }

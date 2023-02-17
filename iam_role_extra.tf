@@ -24,7 +24,7 @@ resource "aws_iam_role_policy_attachment" "extra" {
 }
 
 resource "aws_iam_instance_profile" "extra" {
-  count      = length(keys(var.extra_roles_policy_arn))
-  name                 = element(var.extra_roles, count.index)
-  role       = element(keys(var.extra_roles_policy_arn), count.index)
+  count = length(keys(var.extra_roles_policy_arn))
+  name  = element(var.extra_roles, count.index)
+  role  = element(keys(var.extra_roles_policy_arn), count.index)
 }

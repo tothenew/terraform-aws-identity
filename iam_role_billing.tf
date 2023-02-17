@@ -15,7 +15,7 @@ resource "aws_iam_role_policy_attachment" "billing" {
 
 resource "aws_iam_instance_profile" "billing" {
   count = var.create_iam_billing_role ? 1 : 0
-  name                 = "${var.project_name_prefix}-billing-role"
-  role       = aws_iam_role.billing[0].name
-  tags                 = merge(var.common_tags, tomap({ "Name" : "${var.project_name_prefix}-billing-role" }))
+  name  = "${var.project_name_prefix}-billing-role"
+  role  = aws_iam_role.billing[0].name
+  tags  = merge(var.common_tags, tomap({ "Name" : "${var.project_name_prefix}-billing-role" }))
 }

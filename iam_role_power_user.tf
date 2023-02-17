@@ -14,8 +14,8 @@ resource "aws_iam_role_policy_attachment" "power_user" {
 }
 
 resource "aws_iam_instance_profile" "power_user" {
-  count                = var.create_iam_power_user_role ? 1 : 0
-  name                 = "${var.project_name_prefix}-power-user-role"
-  role       = aws_iam_role.power_user[0].name
-  tags                 = merge(var.common_tags, tomap({ "Name" : "${var.project_name_prefix}-power-user-role" }))
+  count = var.create_iam_power_user_role ? 1 : 0
+  name  = "${var.project_name_prefix}-power-user-role"
+  role  = aws_iam_role.power_user[0].name
+  tags  = merge(var.common_tags, tomap({ "Name" : "${var.project_name_prefix}-power-user-role" }))
 }

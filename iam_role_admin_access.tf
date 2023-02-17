@@ -15,7 +15,7 @@ resource "aws_iam_role_policy_attachment" "admin" {
 
 resource "aws_iam_instance_profile" "admin" {
   count = var.create_iam_admin_role ? 1 : 0
-  name                 = "${var.project_name_prefix}-admin-access-role"
+  name  = "${var.project_name_prefix}-admin-access-role"
   role  = aws_iam_role.admin[0].name
   tags  = merge(var.common_tags, tomap({ "Name" : "${var.project_name_prefix}-admin-access-role" }))
 }

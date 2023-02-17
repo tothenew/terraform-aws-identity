@@ -14,8 +14,8 @@ resource "aws_iam_role_policy_attachment" "system_admin" {
 }
 
 resource "aws_iam_instance_profile" "system_admin" {
-  count      = var.create_iam_system_admin_role ? 1 : 0
-  name                 = "${var.project_name_prefix}-system-admin-role"
-  role       = aws_iam_role.system_admin[0].name
-  tags                 = merge(var.common_tags, tomap({ "Name" : "${var.project_name_prefix}-system-admin-role" }))
+  count = var.create_iam_system_admin_role ? 1 : 0
+  name  = "${var.project_name_prefix}-system-admin-role"
+  role  = aws_iam_role.system_admin[0].name
+  tags  = merge(var.common_tags, tomap({ "Name" : "${var.project_name_prefix}-system-admin-role" }))
 }
