@@ -74,7 +74,7 @@ module "iam" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| account\_name | Account name (slug) | `any` | n/a | yes |
+| create\_common_tags | A mapping of tags to assign to the resource | `map(string)` | n/a |no 
 | create\_iam_admin\_role | Create default role in the account | `bool` | `true` | no |
 | create\_iam_billing\_role | Create default role in the account | `bool` | `true` | no |
 | create\_iam_data_scientist\_role | Create default role in the account | `bool` | `true` | no |
