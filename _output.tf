@@ -11,6 +11,19 @@ output "iam_instance_profile_admin_name" {
   description = "AdministratorAccess instance profile NAME"
 }
 
+output "iam_role_infra_deploy_access_arn" {
+  value       = aws_iam_role.infra_deploy_access[0].arn
+  description = "AdministratorAccess IAM role ARN"
+}
+output "iam_instance_profile_infra_deploy_access_arn" {
+  value       = aws_iam_instance_profile.infra_deploy_access[0].arn
+  description = "AdministratorAccess instance profile ARN"
+}
+output "iam_instance_profile_infra_deploy_access_name" {
+  value       = aws_iam_instance_profile.infra_deploy_access[0].name
+  description = "AdministratorAccess instance profile NAME"
+}
+
 output "iam_role_terraform_tf_agent_arn" {
   value       = aws_iam_role.terraform_tf_agent[0].arn
   description = ""
