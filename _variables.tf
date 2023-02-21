@@ -4,6 +4,17 @@ variable "project_name_prefix" {
   default     = "dev"
 }
 
+variable "create_iam_terraform_tf_agent_role" {
+  description = "A string value to describe prefix of all the resources"
+  type        = bool
+  default     = true
+}
+
+variable "create_iam_infra_deploy_access_role" {
+  description = "A string value to describe prefix of all the resources"
+  type        = bool
+  default     = true
+}
 variable "create_iam_admin_role" {
   description = "A string value to describe prefix of all the resources"
   type        = bool
