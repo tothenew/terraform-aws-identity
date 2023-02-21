@@ -11,6 +11,19 @@ output "iam_instance_profile_admin_name" {
   description = "AdministratorAccess instance profile NAME"
 }
 
+output "iam_role_terraform_tf_agent_arn" {
+  value       = aws_iam_role.terraform_tf_agent[0].arn
+  description = ""
+}
+output "iam_instance_profile_terraform_tf_agent_arn" {
+  value       = aws_iam_instance_profile.terraform_tf_agent[0].arn
+  description = ""
+}
+output "iam_instance_profile_terraform_tf_agent_name" {
+  value       = aws_iam_instance_profile.terraform_tf_agent[0].name
+  description = ""
+}
+
 output "iam_role_billing_arn" {
   value       = aws_iam_role.billing[0].arn
   description = "BillingAccess IAM role ARN"
