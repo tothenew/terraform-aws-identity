@@ -16,7 +16,7 @@ resource "aws_iam_instance_profile" "terraform_tf_agent" {
 resource "aws_iam_role_policy_attachment" "ssm" {
   count = var.create_iam_terraform_tf_agent_role ? 1 : 0
   role       = aws_iam_role.terraform_tf_agent[0].name
-  policy_arn = "arn:aws:iam::aws:policy/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
 
 resource "aws_iam_role_policy_attachment" "s3" {
