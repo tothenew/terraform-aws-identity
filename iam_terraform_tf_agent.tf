@@ -69,7 +69,7 @@ resource "aws_iam_role_policy_attachment" "vpc" {
   role       = "${local.workspace.account_name}-${local.workspace.aws.region}-${local.workspace.project_name}-terraform-tf-agent-role"
   policy_arn = "arn:aws:iam::aws:policy/AmazonVPCFullAccess"
 }
-resource "aws_iam_role_policy_attachment" "ssm" {
+resource "aws_iam_role_policy_attachment" "ssmFull" {
   role       = "${local.workspace.account_name}-${local.workspace.aws.region}-${local.workspace.project_name}-terraform-tf-agent-role"
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMFullAccess"
 }
