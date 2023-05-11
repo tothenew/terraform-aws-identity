@@ -61,19 +61,23 @@ resource "aws_iam_policy" "additional_policy" {
 EOF
 }
 resource "aws_iam_role_policy_attachment" "additional_policy_attachment" {
-  role       = aws_iam_role.terraform_tf_agent.name
+  count      = var.create_iam_terraform_tf_agent_role ? 1 : 0
+  role       = aws_iam_role.terraform_tf_agent[0].name
   policy_arn = aws_iam_policy.additional_policy.arn
 }
 
 resource "aws_iam_role_policy_attachment" "vpc" {
-  role       = aws_iam_role.terraform_tf_agent.name
+  count      = var.create_iam_terraform_tf_agent_role ? 1 : 0
+  role       = aws_iam_role.terraform_tf_agent[0].name
   policy_arn = "arn:aws:iam::aws:policy/AmazonVPCFullAccess"
 }
 resource "aws_iam_role_policy_attachment" "ssmFull" {
-  role       = aws_iam_role.terraform_tf_agent.name
+  count      = var.create_iam_terraform_tf_agent_role ? 1 : 0
+  role       = aws_iam_role.terraform_tf_agent[0].name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMFullAccess"
 }
 resource "aws_iam_role_policy_attachment" "autoscaling" {
-  role       = aws_iam_role.terraform_tf_agent.name
+  count      = var.create_iam_terraform_tf_agent_role ? 1 : 0
+  role       = aws_iam_role.terraform_tf_agent[0].name
   policy_arn = "arn:aws:iam::aws:policy/AutoScalingFullAccess"
 }
